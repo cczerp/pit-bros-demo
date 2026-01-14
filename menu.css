@@ -136,35 +136,37 @@
 
 /* ===== Menu Smokehouse Wrapper with Side Images ===== */
 .menu-smokehouse-wrapper {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
   margin: 2rem 0;
+  align-items: start;
 }
 
 .menu-image-left {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200px;
-  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .menu-image-left img {
   width: 100%;
+  max-width: 300px;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   display: block;
 }
 
 .menu-image-right {
-  position: absolute;
-  right: 0;
-  top: 200px;
-  width: 200px;
-  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 200px;
 }
 
 .menu-image-right img {
   width: 100%;
+  max-width: 300px;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   display: block;
@@ -175,8 +177,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-left: 220px;
-  margin-right: 220px;
 }
 
 .menu-smokehouse-col h2 {
@@ -190,15 +190,20 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .menu-image-left,
-  .menu-image-right {
-    display: none;
+@media (max-width: 900px) {
+  .menu-smokehouse-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .menu-smokehouse-row {
-    margin-left: 0;
-    margin-right: 0;
+  .menu-image-left {
+    order: -1;
+    justify-content: center;
+  }
+
+  .menu-image-right {
+    order: 1;
+    justify-content: center;
+    margin-top: 0;
   }
 }
 
