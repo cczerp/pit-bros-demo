@@ -97,6 +97,47 @@ p {
   border-top: 1px solid #222;
 }
 
+/* ===== Featured Image Section ===== */
+
+.featured-image {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffb347;
+  padding: 2rem 1rem;
+  margin: 0;
+  background: #1b1b1b;
+}
+
+/* ===== Phone Link ===== */
+
+.phone-link {
+  color: #ffb347;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.phone-link:hover {
+  color: #ff6a00;
+  text-decoration: underline;
+}
+
 /* ===== Menu Page Styles ===== */
 
 .menu h2 {
@@ -150,6 +191,17 @@ p {
   color: #999;
   margin: 0.5rem 0 1.5rem;
   font-style: italic;
+}
+
+.menu-disclaimer {
+  text-align: center;
+  border: 1px solid #333;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #1b1b1b;
+  border-radius: 4px;
+  font-style: normal;
+  color: #aaa;
 }
 
 /* ===== Mobile Responsive ===== */
