@@ -61,13 +61,13 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3rem, 6vw, 5rem);
   letter-spacing: 0.08em;
-  color: #c49a6c;
+  color: #7c5a38;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 .hero-slogan {
   font-size: 1.4rem;
-  color: #d2a679;
+  color: #8d6a4a;
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -82,7 +82,7 @@ body {
 
 .hero-subtext {
   font-size: 0.95rem;
-  color: #ccc;
+  color: #837566;
   margin-top: 0.75rem;
   opacity: 0.85;
 }
@@ -147,21 +147,49 @@ p {
   padding: 2rem 1.5rem 3rem;
 }
 
-/* ===== Specials + Image Row (LOCKED LAYOUT) ===== */
+/* ===== Specials + Image + Location Row (LOCKED LAYOUT) ===== */
 .home-feature-row {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 360px 1fr 320px;
   gap: 2rem;
   margin-top: 2rem; /* pulled up under hero */
-  align-items: stretch;
+  align-items: start;
 }
 
-/* ===== Feature Image (RIGHT SIDE) ===== */
+/* ===== Feature Image (MIDDLE) ===== */
+.feature-image {
+  max-width: 600px;
+}
+
 .feature-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 6px;
+  display: block;
+}
+
+/* ===== Location Card ===== */
+.location-card {
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  padding: 1.5rem;
+  border-left: 3px solid #ff6a00;
+  border-radius: 6px;
+}
+
+.location-card h3 {
+  color: #ffb347;
+  margin-bottom: 0.75rem;
+}
+
+.location-card p {
+  line-height: 1.8;
+}
+
+.location-card .phone {
+  color: #ff6a00;
+  font-weight: 700;
+  margin-top: 0.75rem;
 }
 
 /* ===== Daily Special Chalkboard ===== */
@@ -214,33 +242,14 @@ p {
   background: #1b1b1b;
 }
 
-/* ===== About + Location Section ===== */
+/* ===== About Section ===== */
 .info-layout {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 2.5rem;
   margin-top: 3rem;
 }
 
 .info-left h2 {
   color: #ffb347;
   margin-bottom: 1rem;
-}
-
-.info-right {
-  border-left: 3px solid #ff6a00;
-  padding-left: 1.5rem;
-}
-
-.info-right h3 {
-  color: #ffb347;
-  margin-bottom: 0.75rem;
-}
-
-.phone {
-  color: #ff6a00;
-  font-weight: 700;
-  margin-top: 0.75rem;
 }
 
 /* ===== Feature Strip ===== */
@@ -415,14 +424,31 @@ p {
   font-style: italic;
 }
 
-/* ===== Menu Section with Image (Side-by-side) ===== */
-
-.menu-section.with-image {
+/* ===== Menu Smokehouse Row (Handhelds + Backyard BBQ) ===== */
+.menu-smokehouse-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin: 2rem 0;
-  align-items: start;
+}
+
+.menu-smokehouse-col h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 900px) {
+  .menu-smokehouse-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* ===== Menu Images Row ===== */
+.menu-images-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .menu-image {
@@ -437,9 +463,9 @@ p {
 }
 
 @media (min-width: 900px) {
-  .menu-section.with-image {
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+  .menu-images-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
 
@@ -524,34 +550,18 @@ p {
   .info-layout {
     padding: 2rem 1rem;
   }
-
-  .info-right {
-    border-left: none;
-    border-top: 3px solid #ff6a00;
-    padding-left: 0;
-    padding-top: 1.5rem;
-  }
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .home-feature-row {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .feature-image {
     order: -1;
-  }
-
-  .info-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .info-right {
-    border-left: none;
-    border-top: 3px solid #ff6a00;
-    padding-left: 0;
-    padding-top: 1.5rem;
+    max-width: 100%;
   }
 }
 
