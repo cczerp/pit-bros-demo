@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 1.5rem 2rem;
   text-align: center;
   background: #1b1b1b;
   border-bottom: 3px solid #ff6a00;
@@ -34,6 +34,7 @@ body {
 /* ===== Menu Hero Override ===== */
 .menu-hero {
   padding: 2.5rem 1.5rem 2rem;
+  min-height: auto;
 }
 
 .menu-hero h1 {
@@ -47,12 +48,12 @@ body {
 /* ===== Hero Section (FIXED HEIGHT & SPACING) ===== */
 .hero {
   text-align: center;
-  min-height: 52vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem 2rem;
+  padding: 2.5rem 1.5rem 2rem;
+  min-height: auto;
   background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
   border-bottom: 2px solid #ff6a00;
 }
@@ -484,8 +485,7 @@ p {
 
 @media (max-width: 600px) {
   .hero {
-    min-height: 50vh;
-    padding: 3rem 1rem 2rem;
+    padding: 2.5rem 1rem 2rem;
   }
 
   .hero-title {
