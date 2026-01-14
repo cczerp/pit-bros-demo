@@ -134,12 +134,49 @@
   font-style: italic;
 }
 
+/* ===== Menu Smokehouse Wrapper with Side Images ===== */
+.menu-smokehouse-wrapper {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.menu-image-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  z-index: 1;
+}
+
+.menu-image-left img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  display: block;
+}
+
+.menu-image-right {
+  position: absolute;
+  right: 0;
+  top: 200px;
+  width: 200px;
+  z-index: 1;
+}
+
+.menu-image-right img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  display: block;
+}
+
 /* ===== Menu Smokehouse Row (Handhelds + Backyard BBQ) ===== */
 .menu-smokehouse-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin: 2rem 0;
+  margin-left: 220px;
+  margin-right: 220px;
 }
 
 .menu-smokehouse-col h2 {
@@ -153,29 +190,15 @@
   }
 }
 
-/* ===== Menu Images Row ===== */
-.menu-images-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin: 2rem 0;
-}
+@media (max-width: 1200px) {
+  .menu-image-left,
+  .menu-image-right {
+    display: none;
+  }
 
-.menu-image {
-  max-width: 100%;
-}
-
-.menu-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  display: block;
-}
-
-@media (min-width: 900px) {
-  .menu-images-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  .menu-smokehouse-row {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
