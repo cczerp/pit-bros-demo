@@ -138,6 +138,37 @@ p {
   text-decoration: underline;
 }
 
+/* ===== Featured Food Images ===== */
+
+.featured-food {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.food-grid img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-grid img {
+    height: 300px;
+  }
+}
+
 /* ===== Menu Page Styles ===== */
 
 .menu h2 {
