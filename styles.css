@@ -35,25 +35,30 @@ body {
 
 .hero {
   text-align: center;
-  padding: 5rem 1.5rem 4rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 2rem;
   background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
-  border-bottom: 3px solid #ff6a00;
+  border-bottom: 2px solid #ff6a00;
 }
 
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 1px;
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 0.08em;
   color: #c49a6c;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
   margin-bottom: 0.5rem;
 }
 
 .hero-slogan {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   color: #d2a679;
   font-style: italic;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   margin-bottom: 0;
 }
 
@@ -68,7 +73,8 @@ body {
 .hero-subtext {
   font-size: 0.95rem;
   color: #ccc;
-  margin-top: 0;
+  margin-top: 1rem;
+  opacity: 0.85;
 }
 
 .section {
@@ -140,24 +146,61 @@ p {
 /* ===== Main Content Layout ===== */
 
 .main-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-.content-right {
-  display: flex;
-  flex-direction: column;
+/* ===== Home Feature Row (Specials + Image) ===== */
+
+.home-feature-row {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.special-card {
+  position: static;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  display: block;
 }
 
 @media (min-width: 900px) {
-  .main-content {
-    grid-template-columns: 350px 1fr;
-    align-items: start;
+  .home-feature-row {
+    grid-template-columns: 360px 1fr;
+    gap: 2rem;
+  }
+
+  .special-card {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-feature-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-image {
+    order: -1;
+    min-height: 300px;
   }
 }
 
@@ -171,9 +214,13 @@ p {
   padding: 2rem 1.5rem;
   border-radius: 4px;
   border: 2px solid #1a1a1a;
-  position: sticky;
-  top: 2rem;
-  align-self: start;
+}
+
+.special-item img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .daily-specials h3 {
@@ -220,21 +267,6 @@ p {
   text-align: center;
 }
 
-/* ===== Featured Image Section ===== */
-
-.featured-image {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.featured-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: 500px;
-  object-fit: cover;
-}
 
 .image-caption {
   text-align: center;
@@ -369,6 +401,25 @@ p {
   }
 }
 
+/* ===== Menu Grid 2-Column (Bottom Sections) ===== */
+
+.menu-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin: 2rem 0;
+}
+
+.menu-block h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 900px) {
+  .menu-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* ===== Menu Page Styles ===== */
 
 .menu h2 {
@@ -424,18 +475,32 @@ p {
   font-style: italic;
 }
 
-.menu-section-image {
-  margin: 1.5rem 0 2rem;
+/* ===== Menu Section with Image (Side-by-side) ===== */
+
+.menu-section.with-image {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: start;
+}
+
+.menu-image {
   max-width: 100%;
 }
 
-.menu-section-image img {
+.menu-image img {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   display: block;
+}
+
+@media (min-width: 900px) {
+  .menu-section.with-image {
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
 }
 
 .menu-disclaimer {
@@ -451,15 +516,10 @@ p {
 
 /* ===== Mobile Responsive ===== */
 
-@media (min-width: 900px) {
-  .hero-title {
-    font-size: 4.5rem;
-  }
-}
-
 @media (max-width: 600px) {
   .hero {
-    padding: 3rem 1rem;
+    min-height: 60vh;
+    padding: 3rem 1rem 2rem;
   }
 
   .hero-title {
@@ -468,10 +528,6 @@ p {
 
   .hero-slogan {
     font-size: 1.1rem;
-  }
-
-  .daily-specials {
-    position: static;
   }
 
   .hero-buttons {
