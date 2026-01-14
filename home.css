@@ -81,6 +81,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  position: relative;
 }
 
 .special-wrapper {
@@ -91,12 +92,19 @@
 
 .about-section {
   margin-top: 0;
-  width: 100%;
+  width: 150%;
+  margin-left: -25%;
 }
 
 .about-section h2 {
   color: #ffb347;
   margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.about-section p {
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
 
 .home-right {
@@ -147,9 +155,12 @@
 }
 
 .special-item img {
-  width: 100%;
+  width: 70%;
   border-radius: 4px;
   margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .special-item h4 {
