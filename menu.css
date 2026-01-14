@@ -136,37 +136,33 @@
 
 /* ===== Menu Smokehouse Wrapper with Side Images ===== */
 .menu-smokehouse-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  position: relative;
   margin: 2rem 0;
-  align-items: start;
 }
 
 .menu-image-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  position: absolute;
+  left: -320px;
+  top: 0;
+  width: 260px;
 }
 
 .menu-image-left img {
   width: 100%;
-  max-width: 300px;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   display: block;
 }
 
 .menu-image-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: 200px;
+  position: absolute;
+  right: -320px;
+  top: 180px;
+  width: 260px;
 }
 
 .menu-image-right img {
   width: 100%;
-  max-width: 300px;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   display: block;
@@ -177,6 +173,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .menu-smokehouse-col h2 {
@@ -195,14 +193,9 @@
     grid-template-columns: 1fr;
   }
 
-  .menu-image-left {
-    order: -1;
-    justify-content: center;
-  }
-
+  .menu-image-left,
   .menu-image-right {
-    order: 1;
-    justify-content: center;
+    justify-self: center;
     margin-top: 0;
   }
 }
